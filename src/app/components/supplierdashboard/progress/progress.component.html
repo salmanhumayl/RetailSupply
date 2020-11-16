@@ -1,0 +1,39 @@
+
+
+<div class="card">
+  <div>
+    <table class="table table-border table-hover table-stripped" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>RFQ Number</th>
+          <th>Received Date</th>
+          <th>Closing Date </th>
+          <th>Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of PendingRFQ;let i=index">
+        <td>{{i+1}}</td>
+        <td>
+          <a [routerLink]="['/ViewRFQ',i]" routerLinkActive="router-link-active">
+             {{d.RFQNumber}}
+            </a>
+        </td>
+        <td>{{d.ReceivedDate}}</td>
+        <td>{{d.ClosingDate}}</td>
+        <td>{{d.Status}}</td>
+      </tr>
+    </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
+

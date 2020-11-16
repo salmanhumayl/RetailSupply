@@ -1,0 +1,43 @@
+<div><app-leftnav></app-leftnav></div>
+
+
+<div class="row">
+<div class="col-md-10">
+
+
+
+  <app-product-list [rfqid]="RFQID" ></app-product-list>
+</div>
+
+</div>
+
+<br>
+<div class="row">
+
+
+  <div>
+    <tabset>
+      <tab heading="Discussion" id="tab1">
+         <app-discussion-board [rfqid]="RFQID"></app-discussion-board>
+      </tab>
+      <tab heading="Requirements">
+        <app-requirements></app-requirements>
+      </tab>
+      <tab heading="PreQualification">
+        <app-prequalification></app-prequalification>
+      </tab>
+      <tab heading="Terms & Conditions">
+        <app-termscondition></app-termscondition>
+      </tab>
+      <tab heading="Order award criteria">Basic content 2</tab>
+      <tab heading="Other Information">Basic content 2</tab>
+      <tab heading="Rights of Company">Basic content 2</tab>
+    </tabset>
+  </div>
+
+
+</div>
+
+  <br>
+
+

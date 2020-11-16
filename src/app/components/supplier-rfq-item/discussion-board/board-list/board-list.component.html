@@ -1,0 +1,16 @@
+
+<div class="sl-right">
+  <div *ngFor="let i of RFQDetail.Feed">
+      <a href="#" class="link">{{i.userdetail[0].RoleID}}</a> : <span class="sl-date">{{i.Updateed_DateTime}}</span>
+      <blockquote class="m-t-10">
+          <div ass="col-md-3 colcl-xs-12">
+            {{i.Feed}}</div>
+            <div *ngIf="i.ImageUrl.length > 0">
+              <div *ngFor="let img of i.ImageUrl">
+                <img [src]="img"  class="img-responsive radius">
+              </div>
+            </div>
+
+      </blockquote>
+  </div>
+</div>

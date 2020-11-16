@@ -1,0 +1,176 @@
+ <div class="row text-center m-t-20">
+  <div class="col">
+      <app-product-item [Items]="Items.ItemDetail"></app-product-item>
+  </div>
+</div>
+
+<br>
+<form #QuotationForm="ngForm">
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">
+      <h3>Quote Price</h3>
+    </div>
+
+    <div class="card-text">
+          <table class="table table-border table-hover table-stripped" >
+          <thead>
+            <tr>
+            <th>Line No</th>
+            <th>Item</th>
+            <th>Quanity</th>
+            <th>UOM</th>
+            <th>Quoted Price</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let i of Items.ItemDetail;let rowIdx = index">
+          <tr >
+            <td>{{i.LineNo}}</td>
+            <td>{{i.Description}}</td>
+            <td>{{i.Qty}}</td>
+            <td>PCS</td>
+            <td>
+              <input type="text" required
+                  #QuotedPriceFormCtl="ngModel"
+                  id="QuotedPrice{{rowIdx}}"
+                  name="QuotedPrice{{rowIdx}}"
+                  [(ngModel)]="i.QuotedPrice">
+
+                <span class="help-block" *ngIf="QuotedPriceFormCtl.invalid">
+                  Price is required
+                </span>
+                <span class="help-block" *ngIf="QuotedPriceFormCtl.value==0">
+                  Price > 0
+                </span>
+
+
+            </td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
+
+
+  </div>
+</div>
+
+<hr>
+
+<div class="card">
+<div class="card-body">
+
+          <div class="row" >
+            <div class="col-3">
+              Quotation Date
+            </div>
+            <div class="col-3">
+              <input type="text" bsDatepicker [bsConfig]="datePickerConfig" placement="right" class="form-control">
+            </div>
+            <div class="col-6">
+              Quote Attachment
+                <input type="file" />
+          </div>
+          </div>
+
+
+
+          <div class="row" >
+            <div class="col-3">
+              Quote Expiry Date
+            </div>
+            <div class="col-3">
+              <input type="text" bsDatepicker [bsConfig]="datePickerConfig" placement="right"
+              class="form-control"
+              id="RFQ_Expiry_Date"
+              name="RFQ_Expiry_Date"
+             >
+            </div>
+            <div class="col-6">
+              Technical Compliance Sheet
+
+                <input type="file" />
+
+
+          </div>
+          </div>
+
+          <div class="row" >
+            <div class="col-3">
+             Promised Delivery Date
+            </div>
+            <div class="col-3">
+              <input type="text" bsDatepicker [bsConfig]="datePickerConfig" placement="right" class="form-control">
+            </div>
+            <div class="col-6">
+              Supporting Documents
+
+                <input type="file" />
+
+
+          </div>
+          </div>
+
+
+          <div class="row" >
+            <div class="col-3">
+            Delivery Terms
+            </div>
+
+            <div class="col-9" [class.has-error]="deliveryFormCtl.invalid">
+              <input type="text" id="DeliveryTerm" name="DeliveryTerm" class="form-control"
+               required
+              [(ngModel)]="DeliveryTerm"
+              #deliveryFormCtl="ngModel">
+
+                <span class="help-block" *ngIf="deliveryFormCtl.invalid && deliveryFormCtl.touched">
+                  DeliveryTerm is required
+                </span>
+          </div>
+          </div>
+
+
+          <div class="row" >
+            <div class="col-3">
+           Payment Terms
+            </div>
+
+            <div class="col-9">
+              <input type="text" id="PaymentTerm" name="PaymentTerm" class="form-control"
+              required
+             [(ngModel)]="PaymentTerms"
+             #PaymentFormCtl="ngModel">
+
+               <span class="help-block" *ngIf="PaymentFormCtl.invalid && PaymentFormCtl.touched">
+                 Payment Term is required
+               </span>
+
+          </div>
+          </div>
+
+
+          <div class="row" >
+            <div class="col-3">
+            General Comments
+            </div>
+
+            <div class="col-9">
+              <input type="text" class="form-control">
+
+          </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-3">
+              <button type="button"
+              class="btn btn-primary"
+              (click)="save()" [disabled]="QuotationForm.invalid">Submit
+              </button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-success pull-right" (click)="goback()">Go Back </button>
+            </div>
+          </div>
+
+
+</div>
+</div>
+</form>
