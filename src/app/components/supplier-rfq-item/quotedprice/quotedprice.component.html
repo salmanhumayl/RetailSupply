@@ -36,12 +36,10 @@
                   name="QuotedPrice{{rowIdx}}"
                   [(ngModel)]="i.QuotedPrice">
 
-                <span class="help-block" *ngIf="QuotedPriceFormCtl.invalid">
+                <span class="help-block" *ngIf="QuotedPriceFormCtl.invalid ">
                   Price is required
                 </span>
-                <span class="help-block" *ngIf="QuotedPriceFormCtl.value==0">
-                  Price > 0
-                </span>
+
 
 
             </td>
