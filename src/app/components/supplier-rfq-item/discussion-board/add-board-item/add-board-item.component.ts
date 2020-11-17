@@ -11,8 +11,9 @@ export class AddBoardItemComponent implements OnInit {
 
   @ViewChild('takeInput') InputVar : ElementRef;
 
-  @Output()
-  Refresh: EventEmitter<void>=new EventEmitter<void>();
+  @Output() Refresh=new EventEmitter();
+
+//  Refresh: EventEmitter<void>=new EventEmitter<void>();
 
   urls=[];
   files:string[]=[];

@@ -19,7 +19,7 @@ export class DiscussionBoardComponent implements OnInit {
 
 
   RefreshComments(){
-    alert("RefreshComments in discsussion board");
+   // alert("RefreshComments in discsussion board");
     this.BoardListComponent.RefreshComments();
   }
 
