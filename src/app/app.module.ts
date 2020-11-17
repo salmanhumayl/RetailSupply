@@ -28,6 +28,9 @@ import { SupplierdashboardComponent } from './components/supplierdashboard/suppl
 import { ProgressComponent } from './components/supplierdashboard/progress/progress.component';
 import { ClosedComponent } from './components/supplierdashboard/closed/closed.component';
 import { LeftnavComponent } from './components/shared/leftnav/leftnav.component';
+import { OrderawardComponent } from './components/supplier-rfq-item/orderaward/orderaward.component';
+import { OtherinformationComponent } from './components/supplier-rfq-item/otherinformation/otherinformation.component';
+import { RightscompanyComponent } from './components/supplier-rfq-item/rightscompany/rightscompany.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { LeftnavComponent } from './components/shared/leftnav/leftnav.component'
     SupplierdashboardComponent,
     ProgressComponent,
     ClosedComponent,
-    LeftnavComponent
+    LeftnavComponent,
+    OrderawardComponent,
+    OtherinformationComponent,
+    RightscompanyComponent
   ],
   imports: [
     BrowserModule,
