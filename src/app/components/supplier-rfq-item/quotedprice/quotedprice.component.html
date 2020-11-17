@@ -85,9 +85,9 @@
               Technical Compliance Sheet
 
                 <input type="file" title="Browse Technical Complaince Sheet"
-                (onchage)="SheetFileInput($event.target.files)" />
+                (change)="TechnicalFileInput($event.target.files)" />
 
-                <img [src]="QuoteImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
+                <img [src]="TechnicalImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
           </div>
           </div>
 
@@ -102,9 +102,9 @@
               Supporting Documents
 
               <input type="file" title="Browse Technical Complaince Sheet"
-              (onchage)="SupportingFileInput($event.target.files)" />
+              (change)="SupportingFileInput($event.target.files)" />
 
-              <img [src]="QuoteImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
+              <img [src]="SupportingImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
 
 
           </div>
@@ -127,7 +127,7 @@
                 </span>
           </div>
           </div>
-
+          <br/>
 
           <div class="row" >
             <div class="col-3">
@@ -146,7 +146,7 @@
 
           </div>
           </div>
-
+          <br/>
 
           <div class="row" >
             <div class="col-3">

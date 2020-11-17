@@ -20,6 +20,8 @@ export class QuotedpriceComponent implements OnInit {
   SuppDocument:File=null;
 
   QuoteImage:string;
+  TechnicalImage:string;
+  SupportingImage:string;
   DeliveryTerm:string;
   PaymentTerms:string;
   datePickerConfig:Partial<BsDatepickerConfig>;
@@ -74,11 +76,24 @@ export class QuotedpriceComponent implements OnInit {
 
   }
 
-  SheetFileInput(file:FileList){
+  TechnicalFileInput(file:FileList){
+    this.TechnicalSheet=file.item(0);
+    var reader=new FileReader();
+    reader.readAsDataURL(this.TechnicalSheet);  //The readAsDataURL method is used to read the contents of the specified Blob or File
+    reader.onload=(e:any)=>{
+      this.TechnicalImage=e.target.result;
+    }
 
   }
 
   SupportingFileInput(file:FileList){
+
+    this.SuppDocument=file.item(0);
+    var reader=new FileReader();
+    reader.readAsDataURL(this.SuppDocument);  //The readAsDataURL method is used to read the contents of the specified Blob or File
+    reader.onload=(e:any)=>{
+      this.SupportingImage=e.target.result;
+    }
 
   }
 }
