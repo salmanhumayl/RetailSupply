@@ -15,6 +15,11 @@ import{RFQDetail} from 'src/app/models/RFQDetail';
 export class QuotedpriceComponent implements OnInit {
   Items:RFQDetail;
   RFQID:number;
+  QuoteFile:File=null;
+  TechnicalSheet:File=null;
+  SuppDocument:File=null;
+
+  QuoteImage:string;
   DeliveryTerm:string;
   PaymentTerms:string;
   datePickerConfig:Partial<BsDatepickerConfig>;
@@ -58,4 +63,33 @@ export class QuotedpriceComponent implements OnInit {
  alert("Quoted Submitted Successfully");
   console.log(payload);;
   }
+
+  QuoteFileInput(file:FileList){
+    this.QuoteFile=file.item(0);
+    var reader=new FileReader();
+    reader.readAsDataURL(this.QuoteFile);  //The readAsDataURL method is used to read the contents of the specified Blob or File
+    reader.onload=(e:any)=>{
+      this.QuoteImage=e.target.result;
+    }
+
+  }
+
+  SheetFileInput(file:FileList){
+
+  }
+
+  SupportingFileInput(file:FileList){
+
+  }
 }
+
+
+
+
+
+
+
+
+
+//The FileReader. onload property contains an event handler executed when the load event is fired,
+//when content read with readAsArrayBuffer, readAsBinaryString, readAsDataURL or readAsText is available.

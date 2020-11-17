@@ -63,7 +63,8 @@
             </div>
             <div class="col-6">
               Quote Attachment
-                <input type="file" />
+                <input type="file" title="Browse Quote" (change)="QuoteFileInput($event.target.files)"  />
+                <img [src]="QuoteImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
           </div>
           </div>
 
@@ -83,9 +84,10 @@
             <div class="col-6">
               Technical Compliance Sheet
 
-                <input type="file" />
+                <input type="file" title="Browse Technical Complaince Sheet"
+                (onchage)="SheetFileInput($event.target.files)" />
 
-
+                <img [src]="QuoteImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
           </div>
           </div>
 
@@ -99,13 +101,16 @@
             <div class="col-6">
               Supporting Documents
 
-                <input type="file" />
+              <input type="file" title="Browse Technical Complaince Sheet"
+              (onchage)="SupportingFileInput($event.target.files)" />
+
+              <img [src]="QuoteImage"style="width: 100px;height:100px" onerror="this.src='../../../../../assets/images/correct-attachment.jpg'"/>
 
 
           </div>
           </div>
 
-
+          <br/>
           <div class="row" >
             <div class="col-3">
             Delivery Terms
