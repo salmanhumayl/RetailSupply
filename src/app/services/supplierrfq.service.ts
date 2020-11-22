@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { RFQDetail } from '../models/RFQDetail';
 import {VendorRFQ} from 'src/app/models/VendorRFQ';
 
@@ -174,6 +173,7 @@ export class SupplierrfqService {
 
 
 OpenRFQ():VendorRFQ[]{
+
   return this.VendorRFQProgressList;
 }
 
